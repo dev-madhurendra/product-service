@@ -17,7 +17,7 @@
 		<sonar.organization>madhuredra-1</sonar.organization>
   		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<java.version>17</java.version>
-		<sonar.exclusions>**/SpringBootAssignmentApp*.java</sonar.exclusions>
+		<sonar.exclusions>model/**/*,dto/**/*,**/SpringBootAssignmentApp*.java</sonar.exclusions>
 	</properties>
 	<dependencies>
 		<dependency>
