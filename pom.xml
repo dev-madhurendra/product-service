@@ -14,6 +14,8 @@
 	<name>spring-boot-assignment</name>
 	<description>Springboot Assignment</description>
 	<properties>
+		<sonar.organization>madhuredra-1</sonar.organization>
+  		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
