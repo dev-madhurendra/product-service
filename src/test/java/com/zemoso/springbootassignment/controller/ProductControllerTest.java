@@ -18,7 +18,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
-public class ProductControllerTest {
+class ProductControllerTest {
     @Mock
     private ProductService productService;
 
@@ -26,12 +26,12 @@ public class ProductControllerTest {
     private ProductController productController;
 
     @BeforeEach
-    public void setup() {
+    void setup() {
         MockitoAnnotations.openMocks(this);
     }
 
     @Test
-    public void testGetAllProducts() {
+    void testGetAllProducts() {
         // Mock data
         List<ProductDto> expectedProducts = Arrays.asList(new ProductDto(),new ProductDto());
         when(productService.getAllProducts()).thenReturn(expectedProducts);
@@ -45,7 +45,7 @@ public class ProductControllerTest {
     }
 
     @Test
-    public void testAddProduct() {
+    void testAddProduct() {
         // Mock data
         ProductRequestDto productRequestDto = new ProductRequestDto();
 
@@ -57,7 +57,7 @@ public class ProductControllerTest {
     }
 
     @Test
-    public void testGetProduct() {
+    void testGetProduct() {
         // Mock data
         Long productId = 1L;
         Product expectedProduct= new Product();
@@ -72,7 +72,7 @@ public class ProductControllerTest {
     }
 
     @Test
-    public void testGetProductsFromOrder() {
+    void testGetProductsFromOrder() {
         // Mock data
         List<Long> idList = Arrays.asList(1L, 2L);
         List<ProductDto> expectedProducts = Arrays.asList(new ProductDto(), new ProductDto());
@@ -87,7 +87,7 @@ public class ProductControllerTest {
     }
 
     @Test
-    public void testUpdateProduct() {
+    void testUpdateProduct() {
         // Mock data
         ProductDto productDto = new ProductDto();
 
