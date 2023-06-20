@@ -65,12 +65,10 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public String deleteProduct(Long id) {
-        Optional<Product> product =  productRepository.findById(id);
-        if (product.isPresent()) {
-            productRepository.deleteById(id);
-            return "Deleted";
-        }
-        return "Product of given id is not found !";
+        // Optional<Product> product =  productRepository.findById(id);
+        productRepository.deleteById(id);
+        return "Deleted";
+        // return "Product of given id is not found !";
     }
 
     @Override
