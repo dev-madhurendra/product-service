@@ -34,7 +34,7 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductDto> getAllProducts() {
         List<Product> bookList = productRepository.findAll();
         log.info(bookList.get(0).getName());
-        return bookList.stream().map(this::mapToProductDto).collect(Collectors.toList());
+        return bookList.stream().map(this::mapToProductDto).toList();
     }
 
     @Override
@@ -55,7 +55,7 @@ public class ProductServiceImpl implements ProductService {
         return productsOrder
                 .stream().
                 map(id -> mapToProductDto(getProductById(id)))
-                .collect(Collectors.toList());
+                .toList();
     }
 
     private Product getProductById(Long id) {
@@ -65,10 +65,8 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public String deleteProduct(Long id) {
-        // Optional<Product> product =  productRepository.findById(id);
         productRepository.deleteById(id);
         return "Deleted";
-        // return "Product of given id is not found !";
     }
 
     @Override
